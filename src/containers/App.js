@@ -1,4 +1,5 @@
 import  Header from '../components/Header/Header';
+import Login from '../components/Login';
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
@@ -11,6 +12,7 @@ class App extends Component {
             <div>
                 <Header />
                 <Switch>
+                    <Route path="/login" component={Login} />
                 </Switch>
             </div>
         )

@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return(
             <div>
-                <Header />
+                <Header user={this.props.user} />
                 <Switch>
                     <Route path="/login" component={Login} />
                 </Switch>
@@ -20,7 +20,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-
+    user: state.user
 });
 
 const mapDispatchToProps = dispatch => ({

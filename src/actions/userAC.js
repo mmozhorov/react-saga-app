@@ -2,7 +2,8 @@ import auth from "../constants/auth";
 const {
     AUTH_REQUEST,
     AUTH_SUCCESS,
-    AUTH_FAILED
+    AUTH_FAILED,
+    LOGOUT_REQUEST
 } = auth;
 
 export const userRequest = data => ({
@@ -16,7 +17,7 @@ export const userSuccess = user => ({
     type: AUTH_SUCCESS,
     isLoading: false,
     isError: false,
-    user
+    isGuest: false
 });
 
 export const userFailed = error => ({
@@ -24,4 +25,11 @@ export const userFailed = error => ({
     isLoading: false,
     isError: true,
     error
+});
+
+export const logout = () => ({
+    type: LOGOUT_REQUEST,
+    isLoading: false,
+    isError: false,
+    isGuest: true
 });

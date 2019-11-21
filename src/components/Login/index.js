@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './login.css';
 
 class Login extends Component {
@@ -19,6 +20,15 @@ class Login extends Component {
         })
     };
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.getUser({
+            "username": this.state.username,
+            "password": this.state.password
+        });
+        this.props.history.push('/');
+    };
+
     render() {
         return(
             <div className="login-page">
@@ -34,7 +44,7 @@ class Login extends Component {
                                value={this.state.password}
                                onChange={this.handlePassword}
                         />
-                        <button>login</button>
+                        <button onClick={this.handleSubmit}>login</button>
                     </form>
                 </div>
             </div>
@@ -42,4 +52,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

@@ -3,7 +3,8 @@ import auth from "../constants/auth";
 const {
     AUTH_REQUEST,
     AUTH_SUCCESS,
-    AUTH_FAILED
+    AUTH_FAILED,
+    LOGOUT_REQUEST
 } = auth;
 
 const initialState = {
@@ -13,7 +14,7 @@ const initialState = {
     user: {}
 };
 
-export default (state = initialState, { type, isLoading, isError, error, user}) => {
+export default (state = initialState, { type, isLoading, isError, error, isGuest}) => {
     switch (type) {
         case AUTH_REQUEST:
             return {
@@ -26,7 +27,7 @@ export default (state = initialState, { type, isLoading, isError, error, user}) 
                 ...state,
                 isLoading,
                 isError,
-                user: user
+                isGuest
             };
         case AUTH_FAILED:
             return {
@@ -34,6 +35,13 @@ export default (state = initialState, { type, isLoading, isError, error, user}) 
                 isLoading,
                 isError,
                 error
+            };
+        case LOGOUT_REQUEST:
+            return {
+                ...state,
+                isLoading,
+                isError,
+                isGuest
             };
         default:
             return state;

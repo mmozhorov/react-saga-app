@@ -1,6 +1,5 @@
 import Axios from "axios";
-
-const baseUrl = "https://test-api.dengiclick.kz";
+import { baseUrl } from "../config";
 
 export const getAuth = (user) => {
     const url = baseUrl + "/api/login";

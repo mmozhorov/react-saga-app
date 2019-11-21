@@ -1,7 +1,9 @@
+import  Header from '../components/Header/Header';
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import { connect } from "react-redux";
+import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
     render() {
@@ -9,14 +11,6 @@ class App extends Component {
             <div>
                 <Header />
                 <Switch>
-                    <Route path="/login" component={Login} />
-                    <Route path="/register" component={Register} />
-                    <Route path="/editor/:slug?" component={Editor} />
-                    <Route path="/article/:id" component={Article} />
-                    <PrivateRoute path="/settings" component={Settings} />
-                    <Route path="/@:username" component={Profile} />
-                    <Route path="/@:username/favorites" component={Profile} />
-                    <Route path="/" component={Home} />
                 </Switch>
             </div>
         )

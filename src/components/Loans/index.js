@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 export default class Loans extends Component {
-    componentDidMount() {
-        console.log(1);
-        this.props.loansRequest();
-    }
 
     render() {
+        const {
+            loans
+        } = this.props;
+        console.log(loans);
         return(
-            <h1>Loans</h1>
+            <div>
+                <h1>Loans</h1>
+            </div>
         );
     }
 }

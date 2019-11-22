@@ -7,7 +7,7 @@ export function* getLoans() {
     try {
         const token = localStorage.getItem("token");
         const loans = yield call(getLoansRequest, token);
-        yield put(loansSuccess(loans));
+        yield put(loansSuccess(loans.data.data));
     } catch (error) {
         yield put(loansFailed(error.toString()));
     }

@@ -12,11 +12,11 @@ export const loansRequest = data => ({
     data
 });
 
-export const loansSuccess = user => ({
+export const loansSuccess = loans => ({
     type: LOANS_SUCCESS,
     isLoading: false,
     isError: false,
-    isGuest: false
+    loans
 });
 
 export const loansFailed = error => ({

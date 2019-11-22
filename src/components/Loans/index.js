@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './Loans.css';
 
 export default class Loans extends Component {
 
     renderLoan = ({number, status, return_date, requested_amount}) => {
         return (
-            <tr>
+            <tr key={number}>
                 <th scope="row">{number}</th>
                 <td>{status}</td>
                 <td>{return_date}</td>

@@ -17,7 +17,8 @@ export const userSuccess = user => ({
     type: AUTH_SUCCESS,
     isLoading: false,
     isError: false,
-    isGuest: false
+    isGuest: false,
+    token: user
 });
 
 export const userFailed = error => ({
@@ -27,9 +28,12 @@ export const userFailed = error => ({
     error
 });
 
-export const logout = () => ({
-    type: LOGOUT_REQUEST,
-    isLoading: false,
-    isError: false,
-    isGuest: true
-});
+export const logout = () => {
+    return {
+        type: LOGOUT_REQUEST,
+        isLoading: false,
+        isError: false,
+        isGuest: true,
+        token: ""
+    }
+};

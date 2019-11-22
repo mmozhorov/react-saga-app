@@ -11,10 +11,10 @@ const initialState = {
     isGuest: true,
     isLoading: false,
     isError: false,
-    user: {}
+    token: ""
 };
 
-export default (state = initialState, { type, isLoading, isError, error, isGuest}) => {
+export default (state = initialState, { type, isLoading, isError, error, isGuest, token}) => {
     switch (type) {
         case AUTH_REQUEST:
             return {
@@ -27,7 +27,8 @@ export default (state = initialState, { type, isLoading, isError, error, isGuest
                 ...state,
                 isLoading,
                 isError,
-                isGuest
+                isGuest,
+                token
             };
         case AUTH_FAILED:
             return {

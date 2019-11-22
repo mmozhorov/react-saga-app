@@ -6,6 +6,7 @@ import { userSuccess, userFailed } from '../actions/userAC';
 export function* getUser(action) {
     try {
         const user = yield call(getAuth, action.data);
+        localStorage.setItem("token", user.data.data.token);
         yield put(userSuccess(user));
     } catch (error) {
         yield put(userFailed(error.toString()));

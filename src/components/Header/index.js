@@ -26,7 +26,6 @@ class Header extends Component {
     };
     render() {
         const { user } = this.props;
-        console.log(this.props);
         return(
             <nav className="navbar navbar-default">
                 <div className="container-fluid">

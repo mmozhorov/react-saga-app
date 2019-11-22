@@ -16,7 +16,6 @@ class Loans extends Component {
 
         return(
             <div>
-                <h1>Loans</h1>
                 {loans.isLoading? "Loading...": <LoansComponent loans={loans.loans}/>}
             </div>
         );

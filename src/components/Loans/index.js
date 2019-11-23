@@ -20,7 +20,7 @@ export default class Loans extends Component {
         } = this.props;
         return(
             <div>
-                <h1>Loans</h1>
+                <h1 className="col-lg-12 text-center">Loans</h1>
                 <table className="table">
                     <thead>
                     <tr>

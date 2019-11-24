@@ -9,7 +9,7 @@
     cursor: pointer;
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 5px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -35,5 +35,9 @@
 @media all and (max-width: 762px){
     .burger-container{
         display: inline-block;
+    }
+
+    .nav-menu{
+        display: none;
     }
 }

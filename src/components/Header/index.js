@@ -22,16 +22,29 @@ const GuestNavBar = props => (
 
 
 class Header extends Component {
+
+    state = {
+        isOpenMenu: true
+    };
+
+    handleChangeMenu = () => {
+        this.setState({
+            isOpenMenu: !this.state.isOpenMenu
+        });
+    };
+
     logout = () => {
         this.props.logout();
         this.props.history.push('/');
     };
+
     render() {
         const { user } = this.props;
+        const navDisplay = this.state.isOpenMenu? "block" : "none";
         return(
             <nav className="navbar navbar-default">
-                <Burger/>
-                <div className="container-fluid">
+                <Burger isOpen={this.state.isOpenMenu} changeBurger={this.handleChangeMenu}/>
+                <div className="container-fluid nav-menu" style={{display: navDisplay}}>
                     <div className="navbar-header">
                         <Link className="navbar-brand" to="/">Home</Link>
                     </div>

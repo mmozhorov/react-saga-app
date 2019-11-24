@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
+import Burger from "./Burger";
+import "./Header.css";
 
 const UserNavBar = props => (
     <ul className="nav navbar-nav">
@@ -28,6 +30,7 @@ class Header extends Component {
         const { user } = this.props;
         return(
             <nav className="navbar navbar-default">
+                <Burger/>
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <Link className="navbar-brand" to="/">Home</Link>
